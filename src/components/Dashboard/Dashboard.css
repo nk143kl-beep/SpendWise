@@ -17,110 +17,102 @@
 .dashboard-grid {
     display: grid;
     grid-template-columns: 400px 1fr;
-    gap: 2rem;
-}
-
-/* Cards Base */
-.expense-form-card,
-.expense-list-card,
-.summary-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-}
-
-.dashboard-left {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 /* Summary Card */
 .summary-card {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: linear-gradient(135deg, rgba(100, 108, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-    border: 1px solid rgba(100, 108, 255, 0.2);
+    background: var(--accent-gradient);
+    padding: 2rem;
+    border-radius: 24px;
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
 }
 
-.summary-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.summary-card h3 {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
-.summary-item .label {
+.summary-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.summary-stats {
     font-size: 0.9rem;
-    color: #a3a3a3;
-    font-weight: 500;
+    opacity: 0.8;
 }
 
-.summary-item .value {
-    font-size: 1.5rem;
-    font-weight: 700;
+/* Form Card */
+.expense-form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 2.5rem;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
 }
 
-.summary-item .value.total {
-    font-size: 2rem;
-    background: linear-gradient(135deg, #646cff 0%, #a855f7 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.summary-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Expense Form */
 .expense-form-card h3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 1.25rem;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
 }
 
 .expense-form-card select {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 0.8rem;
-    color: #fff;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    width: 100%;
     cursor: pointer;
 }
 
 .expense-form-card select option {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .submit-expense-btn {
     width: 100%;
     margin-top: 1rem;
+    background: var(--primary-color);
+    color: white;
     padding: 1rem;
     border-radius: 12px;
-    border: none;
-    background: #646cff;
-    color: white;
     font-weight: 700;
+    border: none;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.2s;
 }
 
 .submit-expense-btn:hover {
-    background: #535bf2;
+    background: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
 /* Expense List */
+.expense-list-container {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 2rem;
+}
+
 .list-header {
     display: flex;
     justify-content: space-between;
@@ -129,78 +121,58 @@
 }
 
 .filter-select {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
     padding: 0.5rem 1rem;
-    color: #fff;
-}
-
-.filter-select option {
-    background-color: #333;
-    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .table-wrapper {
     overflow-x: auto;
 }
 
-.expense-table {
+table {
     width: 100%;
     border-collapse: collapse;
+}
+
+th {
     text-align: left;
-}
-
-.expense-table th {
     padding: 1rem;
-    color: #a3a3a3;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--card-border);
 }
 
-.expense-table td {
-    padding: 1.25rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--text-primary);
 }
 
 .category-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.category-badge.food {
-    background: rgba(255, 107, 107, 0.15);
-    color: #ff6b6b;
-}
-
-.category-badge.transportation {
-    background: rgba(77, 150, 255, 0.15);
-    color: #4d96ff;
-}
-
-.category-badge.entertainment {
-    background: rgba(168, 85, 247, 0.15);
-    color: #a855f7;
-}
-
-/* ... others ... */
-
-.amount-cell {
-    font-weight: 700;
-    font-family: monospace;
-    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--input-bg);
+    color: var(--primary-color);
 }
 
 .delete-btn {
-    background: transparent;
+    background: none;
     border: none;
-    color: #ef4444;
+    color: var(--danger-color);
     cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
 }
 
 .delete-btn:hover {

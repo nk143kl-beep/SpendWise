@@ -7,11 +7,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--glass-border);
     transition: all 0.3s ease;
 }
 
@@ -19,21 +18,14 @@
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #646cff 0%, #a855f7 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-    letter-spacing: -0.5px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: var(--text-primary);
 }
 
 .brand-logo {
-    stroke: url(#gradient);
-    /* Note: SVG gradients need defs, simple text clip work on text. For stroke we use fallback or inherit color if transparent text fails */
-    stroke: #a855f7;
+    stroke: #6366f1;
 }
 
 /* Navigation Links */
@@ -49,10 +41,14 @@
     position: relative;
     font-size: 1rem;
     font-weight: 500;
-    color: inherit;
+    color: var(--text-secondary);
     cursor: pointer;
     transition: color 0.3s ease;
     padding: 0.5rem 0;
+}
+
+.navbar-item:hover {
+    color: var(--primary-color);
 }
 
 .navbar-item::after {
@@ -62,12 +58,8 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background: #646cff;
+    background: var(--accent-gradient);
     transition: width 0.3s ease;
-}
-
-.navbar-item:hover {
-    color: #646cff;
 }
 
 .navbar-item:hover::after {
@@ -80,20 +72,21 @@
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #646cff 0%, #a855f7 100%);
+    background: var(--accent-gradient);
     color: white;
     border: none;
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.4rem;
     border-radius: 99px;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
 }
 
 /* Mobile Responsive */
@@ -104,6 +97,5 @@
 
     .navbar-links {
         display: none;
-        /* Can be expanded to hamburger menu later */
     }
 }

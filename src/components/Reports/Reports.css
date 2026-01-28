@@ -12,10 +12,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     padding: 1.5rem 2rem;
-    border-radius: 16px;
+    border-radius: 20px;
     margin-bottom: 2rem;
 }
 
@@ -25,60 +25,63 @@
 }
 
 .filter-group select {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
     padding: 0.6rem 1rem;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
 .filter-group select option {
-    background-color: #1a1a1a;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .download-btn {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(100, 108, 255, 0.1);
-    border: 1px solid rgba(100, 108, 255, 0.3);
-    color: #646cff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
+    background: var(--glass-bg);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.6rem 1.4rem;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .download-btn:hover {
-    background: #646cff;
+    background: var(--primary-color);
     color: white;
 }
 
 .reports-grid {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 400px 1fr;
     gap: 2rem;
 }
 
 .summary-card-large,
 .category-list-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 2.5rem;
 }
 
 .summary-card-large h3,
 .category-list-card h3 {
-    font-size: 1.1rem;
-    color: #a3a3a3;
+    font-size: 1rem;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .large-amount {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, #646cff 0%, #a855f7 100%);
     -webkit-background-clip: text;
@@ -89,43 +92,44 @@
 .category-items {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .cat-info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .cat-name {
-    font-weight: 500;
-    color: #d1d5db;
+    color: var(--text-primary);
 }
 
 .cat-amt {
-    font-weight: 700;
-    color: #fff;
+    color: var(--primary-color);
 }
 
 .cat-bar-bg {
     width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
+    height: 10px;
+    background: var(--input-bg);
+    border-radius: 5px;
     overflow: hidden;
 }
 
 .cat-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #646cff, #a855f7);
-    border-radius: 4px;
-    transition: width 1s ease-out;
+    background: var(--accent-gradient);
+    border-radius: 5px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .empty-p {
-    color: #666;
+    color: var(--text-secondary);
     font-style: italic;
+    text-align: center;
+    padding: 2rem;
 }
 
 @media (max-width: 900px) {

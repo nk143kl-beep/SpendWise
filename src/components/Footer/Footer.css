@@ -1,12 +1,12 @@
 .footer {
     padding: 2rem 0;
-    background: rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--glass-bg);
+    border-top: 1px solid var(--glass-border);
     margin-top: auto;
 }
 
 .footer-bottom {
     text-align: center;
-    color: #666;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
