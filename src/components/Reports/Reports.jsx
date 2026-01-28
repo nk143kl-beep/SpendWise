@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import API_BASE_URL from '../../api';
 import './Reports.css';
 
 const Reports = () => {
@@ -23,7 +24,7 @@ const Reports = () => {
 
     const fetchExpenses = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/expenses?email=${user.email}`);
+            const response = await fetch(`${API_BASE_URL}/api/expenses?email=${user.email}`);
             const data = await response.json();
             setExpenses(data);
         } catch (err) {

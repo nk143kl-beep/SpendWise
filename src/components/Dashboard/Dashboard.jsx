@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ExpenseForm from './ExpenseForm';
 import ExpenseList from './ExpenseList';
 import SummaryCard from './SummaryCard';
+import API_BASE_URL from '../../api';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -17,7 +18,7 @@ const Dashboard = () => {
 
     const fetchExpenses = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/expenses?email=${user.email}`);
+            const response = await fetch(`${API_BASE_URL}/api/expenses?email=${user.email}`);
             const data = await response.json();
             setExpenses(data);
         } catch (err) {
@@ -27,7 +28,7 @@ const Dashboard = () => {
 
     const addExpense = async (expenseData) => {
         try {
-            const response = await fetch('http://localhost:5000/api/expenses', {
+            const response = await fetch(`${API_BASE_URL}/api/expenses`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...expenseData, userEmail: user.email })
@@ -42,7 +43,7 @@ const Dashboard = () => {
 
     const deleteExpense = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/expenses/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/expenses/${id}`, {
                 method: 'DELETE'
             });
             if (response.ok) {
